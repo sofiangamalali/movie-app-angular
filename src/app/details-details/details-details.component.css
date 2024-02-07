@@ -1,0 +1,94 @@
+.movie-card {
+    display: flex;
+    margin: 0px;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-poster {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-details {
+    padding: 30px;
+}
+.movie-card img {
+    border-radius: 10px;
+    z-index: 3;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid #ddd; */
+
+}
+.lang{
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight:600 ;
+    color: black;
+}
+
+.durattion{
+    font-size: 20px;
+    font-weight:600 ;
+}
+
+.toggle{
+    font-size: 30px;
+    cursor: pointer;
+}
+.date{
+    margin-top: 2px;
+    font-size: 22.5px;
+}
+.yellow{
+    color: yellow;
+}
+.mycard{
+    z-index: 2;
+    border: 1px solid whitesmoke;
+    box-shadow: 20px rgba(0,0 green,0 blue,0.8 alpha);
+    border-radius: 20px;
+}
+
+.details{
+    cursor: pointer;
+}
+.company-logo {
+    display: inline-block; 
+    margin-right: 10px; 
+  }
+
+.company-logo img{
+    height: 5rem;
+    width: 6rem;
+    border: 0.1px solid #e7e7e6;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: 0;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+  
+.link{
+    border: 1px solid rgba(255, 255, 0, 0.582);
+    border-radius: 10px;
+}
+
+.comp_name{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border: 1px solid rgba(255, 255, 0);
+    padding:10rem;
+}
+
+
+ .star {
+    color: rgba(255, 255, 0, 0.76) !important;
+  }
+  
+  
+  

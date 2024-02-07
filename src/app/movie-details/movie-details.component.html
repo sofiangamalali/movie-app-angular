@@ -1,0 +1,11 @@
+<div class="container my-5">
+
+  <app-details-details [movie]="movie" [iHeartFilled]="isHeartFilled"></app-details-details>
+  <hr>
+  <h1>Recommindations</h1>
+  <div style="padding: 2vw;" class="row row-cols-1 row-cols-md-4 g-4">
+    @for(movie of myrecomind; track movie.id ; let i = $index){
+    <app-details-recomind [movie]="movie"></app-details-recomind>
+    }
+  </div>
+</div>

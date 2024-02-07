@@ -1,0 +1,28 @@
+<div class="card-body h-100 z-index mycard">
+  <div (click)="details(movie.id)">
+    <div class="image-container">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top mycard details" [alt]="movie.title">
+      <ngb-progressbar class="m-3" type="dark" textType="yellow" [value]="movie.vote_average*10" [showValue]="true"
+      [max]="100" style="background-color: yellow;  height: 30px;" />
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row font-weight-bold mt-3">
+      <div class="row m-1">
+        <p class="h4">{{ movie.title }}</p>
+        <p class="h5">{{ movie.release_date | date:'MMM d , y' }}</p>
+      </div>
+      <div class="progress-container">
+        <!-- <mat-progress-spinner
+          mode="determinate"
+          [value]="movie.vote_average"
+          diameter="50"
+          color="primary"
+        >
+      </mat-progress-spinner>
+      <div class="progress-label">{{ movie.vote_average * 10 }}</div> -->
+
+      </div>
+    </div>
+  </div>
+</div>

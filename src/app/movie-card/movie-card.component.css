@@ -1,0 +1,22 @@
+.toggle{
+    font-size: 30px;
+    cursor: pointer;
+}
+.date{
+    margin-top: 2px;
+    font-size: 22.5px;
+}
+.yellow{
+    color: yellow;
+}
+.mycard{
+    z-index: 2;
+    border: 1px solid whitesmoke;
+    box-shadow: 20px rgba(0,0 green,0 blue,0.8 alpha);
+    border-radius: 20px;
+}
+
+.details{
+    cursor: pointer;
+}
+

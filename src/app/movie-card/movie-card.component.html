@@ -1,0 +1,25 @@
+<div class="card h-100 z-index mycard">
+  <div (click)="details(movie.id)">
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top mycard details"
+      [alt]="movie.title">
+    <span>
+      <ngb-progressbar class="m-3" type="dark" textType="yellow" [value]="movie.vote_average*10" [showValue]="true"
+        [max]="100" style="background-color: yellow;  height: 30px;" />
+
+    </span>
+  </div>
+  <div class="card-body">
+
+    <h4 class="card-title">{{movie.title}}
+    </h4>
+    <div class="row font-weight-bold mt-3 d-flex align-center">
+      <div class="col-9">
+        <p class="h4 mt-1">{{movie.release_date | date:'MMM d , y'}}</p>
+      </div>
+      <div class="col">
+        <i class=" mr-1" (click)="toggleHeart()" [class.bi-heart]="!isHeartFilled" [class.bi-heart-fill]="isHeartFilled"
+          [style.color]="isHeartFilled ? 'yellow' : ''" class="toggle"></i>
+      </div>
+    </div>
+  </div>
+</div>

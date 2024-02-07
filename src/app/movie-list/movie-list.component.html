@@ -1,0 +1,54 @@
+<div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+  <div class="carousel-indicators">
+    <button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img alt="..." class="d-block w-100" src="../../assets/movie-one.jpg">
+      <div class="carousel-caption">
+        <h5 class="animated bounceInRight" style="animation-delay: 1s">Welcome to MovieApp</h5>
+        <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s"> Your Gateway to a World of Movies, Anytime, Anywhere!</p>
+     
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img alt="..." class="d-block w-100" src="../../assets/movie-two.jpg">
+      <div class="carousel-caption">
+        <h5 class="animated bounceInRight" style="animation-delay: 1s">Discover Unforgettable Stories</h5>
+        <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Discover, Watch, Enjoy: Elevate Your Movie Experience with Our Seamless Web App!</p>
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img alt="..." class="d-block w-100" src="../../assets/movie-three.jpg">
+      <div class="carousel-caption">
+        <h5 class="animated bounceInRight" style="animation-delay: 1s"> Exclusive Content</h5>
+        <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Lights, Camera, Interaction: Unleash the Power of Entertainment at Your Fingertips!</p>
+  
+      </div>
+    </div>
+  </div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+</div>
+<div *ngIf="movies !== undefined">
+<div class="row">
+</div>
+<div class="container my-5">
+  <h1 class="mb-3">Popular Movies</h1>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  @for (movie of movies | slice: (page-1) * pageSize : page * pageSize; track movie) {
+          <app-movie-card [movie]="movie" ></app-movie-card>
+  }@empty {
+  }
+</div>
+
+<div class="page">
+<ngb-pagination
+class="d-flex justify-content-center m-5"
+[(page)]="page"
+[pageSize]="pageSize"
+[collectionSize]="movies!.length"
+(pageChange)="onPageChange()"
+/>
+</div>
+</div>
+</div>

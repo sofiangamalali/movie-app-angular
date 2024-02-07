@@ -1,0 +1,60 @@
+
+
+<div *ngIf="movie !== undefined"  class="movie-card mb-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top mycard details" [alt]="movie.title">
+      </div>
+      <div class="col-md-8">
+        <div class="movie-details">
+          <div class="row">
+          <div class="col-10">
+            <p class=" mr-2 h3">{{ movie.title}}</p>
+          </div>
+          <div class="col">
+            <i class=" mr-2" (click)="toggleHeart()" [class.bi-heart]="!isHeartFilled" [class.bi-heart-fill]="isHeartFilled" [style.color]="isHeartFilled ? 'yellow' : ''" class="toggle"></i>
+          </div></div>
+                <p class="fs-8">{{movie.release_date | date:'MMM d , y'}}</p>
+          <p class="mb-4 h5">
+            <ngb-rating [(rate)]="movie.vote_average" class="h2 text-warning" [readonly]="true" [max]="10" >
+             
+                        </ngb-rating>
+            <span class="mx-2">({{movie.vote_count}})</span>
+          <p class="mb-4 h5"> {{movie.overview}}</p>
+          <p>
+            <span *ngFor="let cat of movie.genres" class="btn  m-2 rounded font-weight-bold">
+              <span class="badge  m-2 fs-6 p-3" style="color: black; background-color: yellow;">{{ cat.name }}</span>
+            </span>
+          </p>
+          <p>
+            <span class="h5 font-weight-bold durattion">Duration :</span>
+            {{ movie.runtime }} Min.
+            <span class="ml-5 font-weight-bold lang">Language :</span>
+            
+            <span *ngFor="let item of movie.spoken_languages" class="mr-2">
+              <span class="badge  m-2 fs-6" style="color: black; background-color: yellow;">{{ item.english_name }}</span>
+            </span>
+          </p>
+          
+          <!-- ||comp.name -->
+          
+          <p>
+            <span *ngFor="let comp of movie.production_companies" class="company-logo">
+              <ng-container *ngIf="comp.logo_path "> 
+                <img [src]="'https://image.tmdb.org/t/p/w500/' + comp.logo_path" [alt]="comp.name" class="rounded">
+              </ng-container>
+
+            </span>
+          </p>
+          
+          
+          <p>
+            <a href="https://www.imdb.com/title/{{movie.imdb_id}}/" class="btn text-black link" target="_blank">
+               Website <i class="bi bi-link-45deg"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
